@@ -1,6 +1,5 @@
-# 🔢 Counter dApp - IOTA Blockchain
 
-<div align="center">
+# 🔢 Counter dApp - IOTA Blockchain
 
 A decentralized counter application built on IOTA blockchain using Move smart contracts and Next.js. Every count is immutable and stored on-chain!
 
@@ -11,8 +10,6 @@ A decentralized counter application built on IOTA blockchain using Move smart co
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 [Demo](#-usage) • [Installation](#-installation--setup) • [Deploy](#-deploy-smart-contract) • [Documentation](#-smart-contract-api)
-
-</div>
 
 ## 📋 Table of Contents
 
@@ -467,6 +464,3 @@ Built with ❤️ using IOTA Blockchain
 ---
 
 **Happy Counting on the Blockchain! 🎯🚀**
-#   c o u n t e r _ d a p p _ I O T A 
- 
- 
