@@ -1,448 +1,329 @@
-# 🔢 Counter dApp - IOTA Blockchain
 
-A decentralized counter application built on IOTA blockchain using Move smart contracts and Next.js. Every count is immutable and stored on-chain!
 
-![IOTA](https://img.shields.io/badge/IOTA-Testnet-blue)
-![Next.js](https://img.shields.io/badge/Next.js-16.0.3-black)
-![Move](https://img.shields.io/badge/Move-Smart%20Contract-orange)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
+Counter dApp – IOTA Blockchain
 
-## 📋 Table of Contents
+A decentralized counter application built on the IOTA blockchain using Move smart contracts and Next.js. Every count is immutable and stored on-chain.
 
-- [Introduction](#-introduction)
-- [Features](#-features)
-- [Project Structure](#-project-structure)
-- [Tech Stack](#-tech-stack)
-- [Installation & Setup](#-installation--setup)
-- [Deploy Smart Contract](#-deploy-smart-contract)
-- [Usage](#-usage)
-- [Smart Contract API](#-smart-contract-api)
-- [Troubleshooting](#-troubleshooting)
 
----
 
-## 🎯 Introduction
 
-Counter dApp is your first decentralized counting application on IOTA blockchain. Every increment/decrement/reset operation is permanently recorded on-chain and cannot be changed or deleted.
 
-**This application is for:**
-- Beginners learning blockchain and Web3
-- Developers who want to understand IOTA integration
-- Anyone wanting to build a simple but complete dApp
 
-## ✨ Features
 
-### Frontend
-- ✅ **Connect Wallet** - Connect with IOTA Wallet
-- ✅ **Create Counter** - Create counter on-chain
-- ✅ **Increment/Decrement** - Increase/Decrease value by +1/-1
-- ✅ **Reset** - Set counter to 0
-- ✅ **Quick Add** - Quick add +5, +10, +50, +100
-- ✅ **Achievement System** - 9 achievements with popup + confetti animation
-- ✅ **Achievement Gallery** - Display all unlocked achievements
-- ✅ **Progress Bar** - Progress to next achievement
-- ✅ **Toast Notifications** - Success/failure notifications for all actions
-- ✅ **Smart Polling** - Auto-refresh every 3 seconds, stops after 30s inactivity
-- ✅ **Beautiful UI** - Modern animations, gradients and effects
 
-### Smart Contract
-- ✅ **Counter Object** - On-chain storage
-- ✅ **Events** - Emit events for all operations
-- ✅ **Safe Operations** - No negative values allowed
-- ✅ **Shared Object** - Multiple users can interact
+Table of Contents
 
-## 📁 Project Structure
+Introduction
 
-```
+Features
+
+Project Structure
+
+Tech Stack
+
+Installation & Setup
+
+Deploy Smart Contract
+
+Usage
+
+Smart Contract API
+
+Troubleshooting
+
+Useful Links
+
+Deployed Contracts
+
+Contributing
+
+License
+
+Author
+
+Introduction
+
+Counter dApp is a decentralized counting application on the IOTA blockchain. Every increment, decrement, and reset action is permanently recorded on-chain.
+
+This application is ideal for:
+
+Beginners learning blockchain and Web3
+
+Developers exploring IOTA
+
+Anyone wanting to build a complete end-to-end dApp
+
+Features
+Frontend
+
+Connect Wallet (IOTA Wallet Extension)
+
+Create Counter on-chain
+
+Increment / Decrement / Reset
+
+Quick Add: +5, +10, +50, +100
+
+Achievement System with 9 achievements
+
+Achievement Gallery
+
+Progress Bar
+
+Toast Notifications
+
+Auto-refresh (Smart Polling)
+
+Modern UI with animations
+
+Smart Contract
+
+On-chain counter object
+
+Safe operations (no negative values)
+
+Event system
+
+Shared object for multi-user interaction
+
+Project Structure
 pizza_box/
-├── app/                          # Next.js App Router
-│   ├── layout.tsx               # Root layout với providers
-│   ├── page.tsx                 # Trang chủ
-│   └── globals.css              # Global styles + animations
+├── app/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── globals.css
 │
-├── components/                   # React Components
-│   ├── Counter.tsx              # Main counter UI
-│   ├── Provider.tsx             # IOTA + React Query providers
-│   ├── Wallet-connect.tsx       # Wallet connection button
-│   └── sample.tsx               # Sample component (legacy)
+├── components/
+│   ├── Counter.tsx
+│   ├── Provider.tsx
+│   ├── Wallet-connect.tsx
+│   └── sample.tsx
 │
-├── hooks/                        # Custom React Hooks
-│   ├── useCounter.ts            # Counter logic + blockchain interaction
-│   └── useContract.ts           # Generic contract hook (legacy)
+├── hooks/
+│   ├── useCounter.ts
+│   └── useContract.ts
 │
-├── lib/                          # Configuration & Utilities
-│   └── config.ts                # Network config + Package IDs
+├── lib/
+│   └── config.ts
 │
-├── contract/                     # Move Smart Contracts
+├── contract/
 │   └── pizza_box/
 │       ├── sources/
-│       │   ├── counter.move     # Counter smart contract
-│       │   └── pizza_box.move   # Pizza contract (legacy)
-│       ├── Move.toml            # Move package manifest
-│       └── build/               # Compiled contracts
+│       │   ├── counter.move
+│       │   └── pizza_box.move
+│       ├── Move.toml
+│       └── build/
 │
-├── scripts/                      # Deployment scripts
+├── scripts/
 │   ├── iota-deploy-wrapper.js
 │   └── iota-generate-prompt-wrapper.js
 │
-├── public/                       # Static assets
-├── package.json                  # Dependencies
-├── tsconfig.json                # TypeScript config
-├── next.config.ts               # Next.js config
-└── README.md                    # This file
-```
+├── public/
+├── package.json
+├── tsconfig.json
+├── next.config.ts
+└── README.md
 
-## 🛠️ Tech Stack
+Tech Stack
+Frontend
 
-### Frontend Stack
-- **Framework:** [Next.js 16.0.3](https://nextjs.org/) with App Router
-- **Language:** TypeScript 5.x
-- **UI Library:** [Radix UI Themes](https://www.radix-ui.com/themes)
-- **Styling:** Tailwind CSS 4.x
-- **State Management:** React Hooks + TanStack React Query
+Next.js 16
 
-### Blockchain Stack
-- **Blockchain:** [IOTA Testnet](https://wiki.iota.org/)
-- **Smart Contract:** Move Language
-- **Wallet Integration:** [@iota/dapp-kit](https://www.npmjs.com/package/@iota/dapp-kit)
-- **SDK:** [@iota/iota-sdk](https://www.npmjs.com/package/@iota/iota-sdk)
+TypeScript
 
-### Development Tools
-- **Package Manager:** npm
-- **Linter:** ESLint 9
-- **IOTA CLI:** iota-cli (for deployment)
+Tailwind CSS
 
-## 🚀 Installation & Setup
+Radix UI Themes
 
-### System Requirements
-- **Node.js:** >= 20.x
-- **npm:** >= 10.x
-- **IOTA CLI:** >= 1.12.0 (for contract deployment)
-- **IOTA Wallet Extension:** Chrome/Edge extension
+React Query
 
-### Step 1: Clone and install dependencies
+Blockchain
 
-```bash
-# Clone repository
+IOTA Testnet
+
+Move smart contracts
+
+@iota/dapp-kit
+
+@iota/iota-sdk
+
+Dev Tools
+
+Node.js 20
+
+npm 10
+
+IOTA CLI 1.12
+
+ESLint
+
+Installation & Setup
+Requirements
+
+Node.js ≥ 20
+
+npm ≥ 10
+
+IOTA Wallet Extension
+
+IOTA CLI
+
+1. Clone and install
 git clone <repository-url>
 cd pizza_box
-
-# Install dependencies
 npm install --legacy-peer-deps
-```
 
-**Note:** You must use the `--legacy-peer-deps` flag due to package version conflicts.
-
-### Step 2: Run development server
-
-```bash
+2. Run development server
 npm run dev
-```
 
-Open your browser and navigate to: **http://localhost:3000**
 
-### Other Commands
+Open: http://localhost:3000
 
-```bash
-# Build for production
+Other scripts
 npm run build
-
-# Start production server
 npm start
-
-# Lint code
 npm run lint
-
-# Deploy contract (requires IOTA CLI)
 npm run iota-deploy
-```
 
-## 🔐 Deploy Smart Contract
-
-### Install IOTA CLI (on Ubuntu/WSL)
-
-```bash
-# Install Rust if not already installed
+Deploy Smart Contract
+Install IOTA CLI (Ubuntu / WSL)
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-# Install IOTA CLI
 cargo install --locked --git https://github.com/iotaledger/iota.git --branch develop iota
-```
 
-### Deploy contract to Testnet
-
-```bash
-# Navigate to contract directory
+Deploy to Testnet
 cd contract/pizza_box
 
-# 1. Setup testnet environment
 iota client new-env --alias testnet --rpc https://api.testnet.iota.cafe:443
-
-# 2. Switch to testnet
 iota client switch --env testnet
-
-# 3. Create new address (if you don't have one)
 iota client new-address ed25519
-
-# 4. Request gas from faucet
 iota client faucet --url https://faucet.testnet.iota.cafe/gas
-
-# 5. Check balance
 iota client gas
-
-# 6. Build contract
 iota move build
-
-# 7. Deploy contract
 iota client publish --gas-budget 100000000
-```
 
-### Update Package ID
+Update package ID
 
-After successful deployment, copy the **Package ID** from output and update it in `lib/config.ts`:
+Edit:
 
-```typescript
-export const TESTNET_PACKAGE_ID = "0x..." // Paste your Package ID here
-```
+export const TESTNET_PACKAGE_ID = "0x...";
 
-### Network Configuration
+Usage
+1. Install IOTA Wallet Extension
 
-Ensure the frontend is connected to the correct network in `components/Provider.tsx`:
+Switch to Testnet → request gas at: https://faucet.testnet.iota.cafe/
 
-```typescript
-<IotaClientProvider networks={networkConfig} defaultNetwork="testnet">
-```
+2. Connect Wallet
 
-## 📱 Usage
+Open the dApp → click Connect Wallet.
 
-### 1. Install IOTA Wallet
+3. Create Counter
 
-- Download [IOTA Wallet Extension](https://chrome.google.com/webstore) for Chrome/Edge
-- Create or import wallet
-- **Switch to Testnet** (top right corner)
-- Request gas from: https://faucet.testnet.iota.cafe/
+Click "Create Counter" → approve transaction.
 
-### 2. Connect Wallet
+4. Counter Actions
 
-1. Open http://localhost:3000
-2. Click "Connect Wallet" button
-3. Select wallet and approve connection
++1 → increment
 
-### 3. Create Counter
+–1 → decrement
 
-1. Click "Create Counter"
-2. Approve transaction in wallet
-3. Wait for transaction confirmation (~2-5 seconds)
-4. Counter appears with value 0
+Reset → set to 0
 
-### 4. Using Counter
++5 / +10 / +50 / +100 → quick add
 
-- **+1 Button:** Increment counter by 1
-- **-1 Button:** Decrement counter by 1 (no negative values)
-- **Reset Button:** Set counter to 0
-- **+5, +10, +50, +100:** Quick add large amounts
+5. Achievements
 
-### 5. Achievement System
+Unlock milestones: 1, 10, 50, 100, 200, 500, 1000, 5000, 10000.
 
-Scroll down to view the **Achievement Gallery** with 9 achievements:
+Displays popup + confetti + gallery update.
 
-- 🎯 **First Step** - 1 count (Common)
-- 🔥 **Ten Club** - 10 counts (Common)
-- 🎖️ **Half Century** - 50 counts (Rare)
-- 💯 **The Century!** - 100 counts (Rare)
-- ⚡ **Double Century** - 200 counts (Epic)
-- 🏆 **Half Thousand** - 500 counts (Epic)
-- 👑 **The Thousand!** - 1,000 counts (Legendary)
-- 🌟 **Five Thousand** - 5,000 counts (Legendary)
-- 💎 **Ten Thousand!** - 10,000 counts (Legendary)
+Smart Contract API
+Module: counter
 
-**When unlocking achievement:**
-- Full-screen popup with confetti animation 🎊
-- Toast notification
-- Achievement Gallery auto-updates
-- Progress bar shows % to next achievement
+Package ID:
+0x1b1c01b29d7da78d28baf5a3b8317c0384a1b3450603344b89cb7d3e9a90872a
 
-## 📜 Smart Contract API
-
-### Module: `counter`
-
-**Package ID:** `0x1b1c01b29d7da78d28baf5a3b8317c0384a1b3450603344b89cb7d3e9a90872a`
-
-### Struct
-
-```move
+Struct
 public struct Counter has key, store {
     id: UID,
     value: u64,
     owner: address,
 }
-```
 
-### Entry Functions
+Entry Functions
+create(ctx: &mut TxContext)
 
-#### `create(ctx: &mut TxContext)`
-Create a new counter with value 0.
+Creates a new counter with value = 0.
 
-**Example:**
-```typescript
-const tx = new Transaction()
-tx.moveCall({
-  target: `${packageId}::counter::create`,
-})
-```
+increment(counter: &mut Counter)
 
-#### `increment(counter: &mut Counter)`
-Increment counter by 1.
+Increase by 1.
 
-**Example:**
-```typescript
-tx.moveCall({
-  target: `${packageId}::counter::increment`,
-  arguments: [tx.object(counterId)],
-})
-```
+decrement(counter: &mut Counter)
 
-#### `decrement(counter: &mut Counter)`
-Decrement counter by 1 (only when value > 0).
+Decrease by 1 if value > 0.
 
-**Example:**
-```typescript
-tx.moveCall({
-  target: `${packageId}::counter::decrement`,
-  arguments: [tx.object(counterId)],
-})
-```
+reset(counter: &mut Counter)
 
-#### `reset(counter: &mut Counter)`
-Reset counter to 0.
+Set value to 0.
 
-**Example:**
-```typescript
-tx.moveCall({
-  target: `${packageId}::counter::reset`,
-  arguments: [tx.object(counterId)],
-})
-```
+add(counter: &mut Counter, amount: u64)
 
-#### `add(counter: &mut Counter, amount: u64)`
-Add a custom amount to counter.
+Add any amount.
 
-**Example:**
-```typescript
-tx.moveCall({
-  target: `${packageId}::counter::add`,
-  arguments: [tx.object(counterId), tx.pure.u64(50)],
-})
-```
+Events
+struct IncrementEvent { counter_id: ID, old_value: u64, new_value: u64 }
+struct DecrementEvent { counter_id: ID, old_value: u64, new_value: u64 }
+struct ResetEvent     { counter_id: ID, old_value: u64 }
 
-### View Functions
+Troubleshooting
+DependentPackageNotFound
 
-#### `get_value(counter: &Counter): u64`
-Get the current counter value.
+Switch wallet to Testnet → refresh.
 
-#### `get_owner(counter: &Counter): address`
-Get the owner address of the counter.
+Insufficient gas
 
-### Events
+Request tokens at: https://faucet.testnet.iota.cafe/
 
-```move
-public struct IncrementEvent has copy, drop {
-    counter_id: ID,
-    old_value: u64,
-    new_value: u64,
-}
+Transaction failed
 
-public struct DecrementEvent has copy, drop {
-    counter_id: ID,
-    old_value: u64,
-    new_value: u64,
-}
+Try again after a few seconds.
 
-public struct ResetEvent has copy, drop {
-    counter_id: ID,
-    old_value: u64,
-}
-```
+Counter not updating
 
-## 🐛 Troubleshooting
+Polling pauses after 30s inactivity.
 
-### Error: `DependentPackageNotFound`
+Useful Links
 
-**Cause:** Wallet is connected to wrong network or Package ID is incorrect.
+https://wiki.iota.org/
 
-**Solution:**
-1. Open IOTA Wallet extension
-2. Switch to **Testnet** (not Devnet)
-3. Refresh the webpage
-4. Try again
+https://github.com/iotaledger/dapp-kit
 
-### Error: `Insufficient gas`
+https://explorer.testnet.iota.cafe/
 
-**Cause:** Not enough IOTA tokens to pay gas fees.
+https://faucet.testnet.iota.cafe/
 
-**Solution:**
-1. Go to https://faucet.testnet.iota.cafe/
-2. Paste your wallet address
-3. Click "Request Tokens"
-4. Wait a few seconds and try again
+https://move-language.github.io/move/
 
-### Error: `Transaction failed`
+Deployed Contracts (Testnet)
 
-**Cause:** Could be due to network congestion or low gas budget.
+Package ID:
+0x1b1c01b29d7da78d28baf5a3b8317c0384a1b3450603344b89cb7d3e9a90872a
 
-**Solution:**
-1. Wait a few seconds and try again
-2. Check IOTA Explorer to view transaction status
-3. Refresh page and reconnect wallet
+Transaction:
+DZuYHg744kRiBaKjLfRxh2mdMiXMvAdBuNi7UsgNLQ3K
 
-### Counter not auto-updating
+Explorer:
+https://explorer.testnet.iota.cafe/object/0x1b1c01b29d7da78d28baf5a3b8317c0384a1b3450603344b89cb7d3e9a90872a
 
-**Cause:** Polling may be stopped due to inactivity.
+Contributing
 
-**Solution:**
-- Perform any action to restart polling
-- Or refresh page manually
-- Polling auto-stops after 30 seconds of inactivity to save resources
+Pull requests are welcome.
+For major changes, open an issue first.
 
-### Transaction History not visible
+License
 
-**Cause:** History is stored in session, lost when refreshing.
+MIT License.
 
-**Solution:**
-- History only displays after performing transactions
-- Refreshing page clears history (this is expected behavior)
-- Transactions can still be viewed on IOTA Explorer
+Author
 
-## 🔗 Useful Links
-
-- **IOTA Documentation:** https://wiki.iota.org/
-- **IOTA dApp Kit:** https://github.com/iotaledger/dapp-kit
-- **IOTA Testnet Explorer:** https://explorer.testnet.iota.cafe/
-- **Testnet Faucet:** https://faucet.testnet.iota.cafe/
-- **Move Language:** https://move-language.github.io/move/
-- **Next.js Docs:** https://nextjs.org/docs
-
-## 📊 Deployed Contracts
-
-### Testnet
-- **Package ID:** `0x1b1c01b29d7da78d28baf5a3b8317c0384a1b3450603344b89cb7d3e9a90872a`
-- **Transaction:** `DZuYHg744kRiBaKjLfRxh2mdMiXMvAdBuNi7UsgNLQ3K`
-- **Explorer:** [View on Explorer](https://explorer.testnet.iota.cafe/object/0x1b1c01b29d7da78d28baf5a3b8317c0384a1b3450603344b89cb7d3e9a90872a)
-
-## 🤝 Contributing
-
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
-
-## 📄 License
-
-MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👨‍💻 Author
-
-Built with ❤️ using IOTA Blockchain
-
----
-
-**Happy Counting on the Blockchain! 🎯🚀**
-#   c o u n t e r _ d a p p _ I O T A  
- 
+Built with ❤️ on IOTA Blockchain.
