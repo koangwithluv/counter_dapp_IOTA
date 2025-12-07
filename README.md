@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 # 🔢 Counter dApp - IOTA Blockchain
 
