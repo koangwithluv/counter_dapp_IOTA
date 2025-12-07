@@ -1,11 +1,18 @@
 # 🔢 Counter dApp - IOTA Blockchain
 
+<div align="center">
+
 A decentralized counter application built on IOTA blockchain using Move smart contracts and Next.js. Every count is immutable and stored on-chain!
 
-![IOTA](https://img.shields.io/badge/IOTA-Testnet-blue)
-![Next.js](https://img.shields.io/badge/Next.js-16.0.3-black)
-![Move](https://img.shields.io/badge/Move-Smart%20Contract-orange)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
+[![IOTA](https://img.shields.io/badge/IOTA-Testnet-blue)](https://wiki.iota.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16.0.3-black)](https://nextjs.org/)
+[![Move](https://img.shields.io/badge/Move-Smart%20Contract-orange)](https://move-language.github.io/move/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+[Demo](#-usage) • [Installation](#-installation--setup) • [Deploy](#-deploy-smart-contract) • [Documentation](#-smart-contract-api)
+
+</div>
 
 ## 📋 Table of Contents
 
@@ -26,9 +33,19 @@ A decentralized counter application built on IOTA blockchain using Move smart co
 Counter dApp is your first decentralized counting application on IOTA blockchain. Every increment/decrement/reset operation is permanently recorded on-chain and cannot be changed or deleted.
 
 **This application is for:**
-- Beginners learning blockchain and Web3
-- Developers who want to understand IOTA integration
-- Anyone wanting to build a simple but complete dApp
+- 🎓 Beginners learning blockchain and Web3
+- 👨‍💻 Developers who want to understand IOTA integration
+- 🚀 Anyone wanting to build a simple but complete dApp
+
+## 📸 Screenshots
+
+> *Screenshots will be added soon. Run the app locally to see it in action!*
+
+**Key Features:**
+- Modern, gradient UI with smooth animations
+- Real-time counter updates with blockchain confirmation
+- Achievement system with confetti celebrations
+- Responsive design for all screen sizes
 
 ## ✨ Features
 
@@ -54,30 +71,32 @@ Counter dApp is your first decentralized counting application on IOTA blockchain
 ## 📁 Project Structure
 
 ```
-pizza_box/
+counter_dapp_IOTA/
 ├── app/                          # Next.js App Router
-│   ├── layout.tsx               # Root layout với providers
-│   ├── page.tsx                 # Trang chủ
+│   ├── layout.tsx               # Root layout with providers
+│   ├── page.tsx                 # Home page
 │   └── globals.css              # Global styles + animations
 │
 ├── components/                   # React Components
 │   ├── Counter.tsx              # Main counter UI
 │   ├── Provider.tsx             # IOTA + React Query providers
 │   ├── Wallet-connect.tsx       # Wallet connection button
-│   └── sample.tsx               # Sample component (legacy)
+│   ├── AchievementGallery.tsx   # Achievement gallery component
+│   └── AchievementPopup.tsx     # Achievement popup with confetti
 │
 ├── hooks/                        # Custom React Hooks
 │   ├── useCounter.ts            # Counter logic + blockchain interaction
-│   └── useContract.ts           # Generic contract hook (legacy)
+│   └── useContract.ts           # Generic contract hook
 │
 ├── lib/                          # Configuration & Utilities
-│   └── config.ts                # Network config + Package IDs
+│   ├── config.ts                # Network config + Package IDs
+│   └── achievements.ts          # Achievement definitions
 │
 ├── contract/                     # Move Smart Contracts
 │   └── pizza_box/
 │       ├── sources/
 │       │   ├── counter.move     # Counter smart contract
-│       │   └── pizza_box.move   # Pizza contract (legacy)
+│       │   └── pizza_box.move   # Pizza contract
 │       ├── Move.toml            # Move package manifest
 │       └── build/               # Compiled contracts
 │
@@ -124,8 +143,8 @@ pizza_box/
 
 ```bash
 # Clone repository
-git clone <repository-url>
-cd pizza_box
+git clone https://github.com/koangwithluv/counter_dapp_IOTA.git
+cd counter_dapp_IOTA
 
 # Install dependencies
 npm install --legacy-peer-deps
@@ -439,10 +458,15 @@ MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👨‍💻 Author
 
+**koangwithluv**
+- GitHub: [@koangwithluv](https://github.com/koangwithluv)
+- Repository: [counter_dapp_IOTA](https://github.com/koangwithluv/counter_dapp_IOTA)
+
 Built with ❤️ using IOTA Blockchain
 
 ---
 
 **Happy Counting on the Blockchain! 🎯🚀**
-#   c o u n t e r _ d a p p _ I O T A  
+#   c o u n t e r _ d a p p _ I O T A 
+ 
  
