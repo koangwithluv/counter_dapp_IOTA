@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # 🔢 Counter dApp - IOTA Blockchain
 
@@ -34,8 +35,6 @@ Counter dApp is your first decentralized counting application on IOTA blockchain
 - 👨‍💻 Developers who want to understand IOTA integration
 - 🚀 Anyone wanting to build a simple but complete dApp
 
-## 📸 Screenshots
-
 > *Screenshots will be added soon. Run the app locally to see it in action!*
 
 **Key Features:**
@@ -50,36 +49,19 @@ Counter dApp is your first decentralized counting application on IOTA blockchain
 - ✅ **Connect Wallet** - Connect with IOTA Wallet
 - ✅ **Create Counter** - Create counter on-chain
 - ✅ **Increment/Decrement** - Increase/Decrease value by +1/-1
-- ✅ **Reset** - Set counter to 0
-- ✅ **Quick Add** - Quick add +5, +10, +50, +100
-- ✅ **Achievement System** - 9 achievements with popup + confetti animation
-- ✅ **Achievement Gallery** - Display all unlocked achievements
-- ✅ **Progress Bar** - Progress to next achievement
-- ✅ **Toast Notifications** - Success/failure notifications for all actions
-- ✅ **Smart Polling** - Auto-refresh every 3 seconds, stops after 30s inactivity
-- ✅ **Beautiful UI** - Modern animations, gradients and effects
-
 ### Smart Contract
-- ✅ **Counter Object** - On-chain storage
 - ✅ **Events** - Emit events for all operations
 - ✅ **Safe Operations** - No negative values allowed
 - ✅ **Shared Object** - Multiple users can interact
 
 ## 📁 Project Structure
 
-```
-counter_dapp_IOTA/
-├── app/                          # Next.js App Router
 │   ├── layout.tsx               # Root layout with providers
 │   ├── page.tsx                 # Home page
 │   └── globals.css              # Global styles + animations
 │
 ├── components/                   # React Components
 │   ├── Counter.tsx              # Main counter UI
-│   ├── Provider.tsx             # IOTA + React Query providers
-│   ├── Wallet-connect.tsx       # Wallet connection button
-│   ├── AchievementGallery.tsx   # Achievement gallery component
-│   └── AchievementPopup.tsx     # Achievement popup with confetti
 │
 ├── hooks/                        # Custom React Hooks
 │   ├── useCounter.ts            # Counter logic + blockchain interaction
@@ -464,3 +446,21 @@ Built with ❤️ using IOTA Blockchain
 ---
 
 **Happy Counting on the Blockchain! 🎯🚀**
+=======
+# 🔢 Counter dApp — IOTA Blockchain (Move + Next.js)
+
+<div align="center">
+
+A decentralized counter application built on the **IOTA Blockchain** using **Move smart contracts** and **Next.js**.  
+Every count is immutable and stored securely on-chain.
+
+---
+
+[![IOTA](https://img.shields.io/badge/IOTA-Testnet-blue)](https://wiki.iota.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16.0.3-black)](https://nextjs.org/)
+[![Move](https://img.shields.io/badge/Move-Smart%20Contract-orange)](https://move-language.github.io/move/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+**[Demo](#-usage) • [Install](#-installation--setup) • [Deploy](#-deploy-smart-contract) • [API]()**
+>>>>>>> 4248142e8a90311488511d7d068001be7e1cf64c
